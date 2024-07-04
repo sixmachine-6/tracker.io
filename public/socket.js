@@ -3,7 +3,6 @@ const socket = io();
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(
     (position) => {
-      console.log(position.coords);
       const { latitude, longitude } = position.coords;
       socket.emit("sendLocation", { latitude, longitude });
     },
